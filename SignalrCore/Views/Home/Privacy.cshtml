@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4">
+
+            @Html.TextBox("userInput", ViewBag.ClientName as string, new { @readonly = "readonly", style = "width:300px;" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="messageInput" style="width:300px;" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <span>聊天对象：</span>
+    @Html.DropDownList("users", ViewBag.OnLineUsers as IEnumerable<SelectListItem>)
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+        <div class="col-6">
+            <input type="button" id="sendButton1" value="系統通知" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+<script>
+
+    document.querySelector("#Loginbutton").addEventListener("click", function () {
+
+    })
+</script>
